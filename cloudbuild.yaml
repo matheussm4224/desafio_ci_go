@@ -2,11 +2,11 @@ steps:
 
   - id: "Rodando docker-compose"
     name: 'gcr.io/$PROJECT_ID/docker-compose'
-    args: ['-f', 'docker-compose.cloudbuild.yaml', 'up', '-d']
-  
+    args: ['-f', 'docker-compose.yaml', 'up', '-d']
+
   - id: "test"
     name: "gcr.io/cloud-builders/docker"
-    args: ['exec', '-t', 'go', 'test']
+    args: ['exec', '-t', 'desafio_ci_app', 'go', 'test']
 
   - id: "build golang"
     name: "gcr.io/cloud-builders/docker"
