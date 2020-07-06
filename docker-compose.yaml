@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  app:
+    build: .
+    container_name: 'desafio_ci_app'
+    security_opt:
+      - apparmor=unconfined
+    tty: true
