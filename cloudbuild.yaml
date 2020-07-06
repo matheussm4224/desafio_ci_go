@@ -15,3 +15,6 @@ steps:
     - "-t"
     - "gcr.io/$PROJECT_ID/desafio_golang:$SHORT_SHA"
     - "."
+  - id: 'Pushing image'  
+    name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/desafio_golang:$SHORT_SHA']
