@@ -1,0 +1,13 @@
+steps:
+
+  - id: "test"
+    name: "gcr.io/cloud-builders/docker"
+    args: ['exec', '-t', 'go', 'test']
+    
+  - id: "build golang"
+    name: "gcr.io/cloud-builders/docker"
+    args:
+    - "build"
+    - "-t"
+    - "gcr.io/$PROJECT_ID/desafio_golang:latest"
+    - "."
